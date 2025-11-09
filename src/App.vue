@@ -12,8 +12,13 @@ onMounted(() => taskRepo.find().then(items => tasks.value = items))
 
 <template>
   <h1>Todos</h1>
-  <div v-for="task in tasks">
-    <input type="checkbox" v-model="task.completed" />
-    {{ task.title }}
-  </div>
+  <main>
+    <form>
+      <input placeholder="Add todo..." /> <button>Add</button>
+    </form>
+    <div v-for="task in tasks">
+      <input type="checkbox" v-model="task.completed" />
+      {{ task.title }}
+    </div>
+  </main>
 </template>
