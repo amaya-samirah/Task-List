@@ -1,11 +1,15 @@
-import { Entity, Fields } from "remult";
+import { Entity, Fields, Validators } from "remult";
 
 // In shared folder so can share with front/backend
 @Entity("tasks", { allowApiCrud: true})  // allow full capabilities of apicrud
 export class Task {
     @Fields.autoIncrement()
     id = 0;
-    @Fields.string()
+    @Fields.string<Task>({
+        validate: task => {
+            if (task.title.length < 1) throw Error("Must enter title");
+        }
+    })
     title = "";
     @Fields.boolean()
     completed = false;
