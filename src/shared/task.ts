@@ -1,7 +1,7 @@
-import { Entity, Fields, Validators } from "remult";
+import { Allow, Entity, Fields, Validators } from "remult";
 
 // In shared folder so can share with front/backend
-@Entity("tasks", { allowApiCrud: true})  // allow full capabilities of apicrud
+@Entity("tasks", { allowApiCrud: Allow.authenticated})  // allow full capabilities of apicrud
 export class Task {
     @Fields.autoIncrement()
     id = 0;
