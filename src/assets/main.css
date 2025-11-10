@@ -24,9 +24,10 @@ main {
 
 main > div,
 main > form {
-  padding: 0.5rem;
+  padding: 1rem;
   border-bottom: 1px solid rgb(177, 198, 236);
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.25rem;
 }
@@ -56,4 +57,10 @@ button {
   font-size: 100%;
   white-space: nowrap;
   cursor: pointer;
+  color: #354487;
+}
+
+hello {
+  color: white;
+  padding: 8px;
 }

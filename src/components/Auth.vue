@@ -43,7 +43,9 @@ async function signOut() {
 
 <template>
     <div v-if="signedIn">
-        Hello {{  remult.user?.name }}
+        <hello>
+        Hello, {{  remult.user?.name }}
+        </hello>
         <button @click="signOut()">Sign Out</button>
         <App />
     </div>
