@@ -1,6 +1,10 @@
 # Task-List
 
-This is a work in progress...
+This web application allows multiple users to create and edit a list of tasks.
+
+
+https://github.com/user-attachments/assets/ff0bf33c-6d2b-4883-88d9-e2772fab46f7
+
 
 ## Recommended IDE Setup
 
@@ -28,6 +32,29 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 ```sh
 npm install
 ```
+Ensure you have 'postgresql@14' installed.
+
+```Ensure you have the below packages installed...
+npm ls
+```
+
+├── @tsconfig/node22@22.0.2
+├── @types/cookie-session@2.0.49
+├── @types/express@5.0.5
+├── @types/node@22.19.0
+├── @vitejs/plugin-vue@6.0.1
+├── @vue/tsconfig@0.8.1
+├── cookie-session@2.1.1
+├── express@5.1.0
+├── npm-run-all2@8.0.4
+├── pg@8.16.3
+├── remult@3.2.3
+├── tsx@4.20.6
+├── typescript@5.9.3
+├── vite-plugin-vue-devtools@8.0.3
+├── vite@7.2.2
+├── vue-tsc@3.1.3
+└── vue@3.5.24
 
 ### Compile and Hot-Reload for Development
 
