@@ -57,7 +57,7 @@ async function setAllCompleted(completed:boolean) {
 <template>
   <h1>Todos</h1>
   <main>
-    <form @submit.prevent="addTask()">
+    <form @submit.prevent="addTask()" v-if="taskRepo.metadata.apiInsertAllowed()">
       <input 
         placeholder="Add todo..." 
         v-model="newTaskTitle" 
@@ -73,7 +73,7 @@ async function setAllCompleted(completed:boolean) {
       <input v-model="task.title" />
       <button @click="saveTask(task)">Save</button>
 
-      <button @click="deleteTask(task)">Delete</button>
+      <button v-if="taskRepo.metadata.apiDeleteAllowed()" @click="deleteTask(task)">Delete</button>
     </div>
     <div>
       <button @click="setAllCompleted(true)">Select All</button>
