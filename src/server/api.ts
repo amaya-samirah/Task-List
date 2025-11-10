@@ -8,6 +8,7 @@ export const api = remultApi({
     controllers: [TasksController],
     getUser: (req) => req.session!["user"],
     dataProvider: createPostgresConnection({
-        connectionString: "postgres://postgres:MASTERKEY@localhost/postgres"
+        connectionString: process.env["DATABASE_URL"]  // search for this key first
+        || "postgres://postgres:MASTERKEY@localhost/postgres"
     }),
 });
