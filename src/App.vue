@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import { Task } from './shared/task';
 import { remult } from 'remult';
+import { TasksController } from './shared/TasksController';
 
 const tasks = ref<Task[]>([]);
 
@@ -47,6 +48,10 @@ async function saveTask(task:Task) {
   }
 }
 
+async function setAllCompleted(completed:boolean) {
+  await TasksController.setAllCompleted(completed)
+}
+
 </script>
 
 <template>
@@ -69,6 +74,10 @@ async function saveTask(task:Task) {
       <button @click="saveTask(task)">Save</button>
 
       <button @click="deleteTask(task)">Delete</button>
+    </div>
+    <div>
+      <button @click="setAllCompleted(true)">Select All</button>
+      <button @click="setAllCompleted(false)">Deselect All</button>
     </div>
   </main>
 </template>
